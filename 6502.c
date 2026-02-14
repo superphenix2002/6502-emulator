@@ -4875,14 +4875,13 @@ printf("Value in register Program counter= %x \n",pc);
 affirm = 99;
 while((affirm == 99)||(affirm == 67)){
 printf("Enter memory location to inspect in hex : ");
-scanf("%x",&hex_code);
-if(hex_code >= MAX){
+scanf("%d",&hex_code);
 printf("\n Value at memory location %x is %x \n",hex_code,memory[hex_code]);
-}
+/*
 else{
 printf("Bad memory location\n");
 }
-
+*/
 printf("Want to continue(c)?\n");
 affirm = getCharInput("Enter choice: ");
 }
