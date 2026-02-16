@@ -4864,19 +4864,19 @@ execute(instr);
 
 
 printf("Value in register Accumulator = %x \n",acc);
-printf("Value in register X = %x \n",x);
-printf("Value in register Y = %x \n",y);
-printf("Value in register PCL = %x \n",pcl);
-printf("Value in register PCH = %x \n",pch);
-printf("Value in register SP = %x \n",sp);
-printf("Value in register Status = %x \n",status);	
-printf("Value in register Program counter= %x \n",pc);
+printf("Value in register X = 0x%x \n",x);
+printf("Value in register Y = 0x%x \n",y);
+printf("Value in register PCL = 0x%x \n",pcl);
+printf("Value in register PCH = 0x%x \n",pch);
+printf("Value in register SP = 0x%x \n",sp);
+printf("Value in register Status = 0x%x \n",status);	
+printf("Value in register Program counter= 0x%x \n",pc);
 
 affirm = 99;
 while((affirm == 99)||(affirm == 67)){
-printf("Enter memory location to inspect in hex : ");
+printf("Enter memory location to inspect (in decimal) : ");
 scanf("%d",&hex_code);
-printf("\n Value at memory location %x is %x \n",hex_code,memory[hex_code]);
+printf("\n Value at memory location 0x%x is 0x%x \n",hex_code,memory[hex_code]);
 /*
 else{
 printf("Bad memory location\n");
