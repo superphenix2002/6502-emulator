@@ -18,7 +18,7 @@ uint8_t sp;
 uint8_t status;
 uint8_t memory[MAX];
 uint16_t pc;
-
+uint16_t origin_prog;
 //
 
 //BCD addition
@@ -4782,7 +4782,7 @@ break;
 
 void read_image_file(FILE* file){ 
 int c=0;
-uint8_t* p = memory;
+uint8_t* p = memory + origin_prog;
  while(fread(p,sizeof(uint8_t),1,file) == 1) {
  if(ferror(file)){
  printf("An error occurred during file reading!\n");
@@ -4831,6 +4831,11 @@ return ch;
 
 
 int main(int argc, char* argv[]){
+
+uint16_t originator;
+printf("Enter program origin in decimal: ");
+scanf("%d",&originator);
+origin_prog=originator;
 	
 if (argc < 2)
 { /* show usage string */
@@ -4846,10 +4851,14 @@ exit(1);
 }
 }
 
+
 uint8_t instr;
 int running = 1;
 int affirm;
 uint16_t hex_code;
+
+
+
 
 enum
 {
